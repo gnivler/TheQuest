@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace TheQuest
 {
@@ -17,7 +18,8 @@ namespace TheQuest
         // the game keeps a private Player object.  The form will only interact with this through methods on Game
         private Player player;
         public  Point PlayerLocation {  get { return player.Location; } }
-        public IEnumerable<string> PlayerWeapons { get { return player.HitPoints; } }
+        public int PlayerHitPoints {  get { return player.HitPoints; } }
+        public IEnumerable<string> PlayerWeapons { get { return player.Weapons; } }
         private int level = 0;
         public int Level { get { return level; } }
 
@@ -88,7 +90,7 @@ namespace TheQuest
             switch (level)
             {
                 case 1:
-                    Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)) };
+                    Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)), };
                     WeaponInRoom = new Sword(this, GetRandomLocation(random));
                     break;
                 case 2:
@@ -100,41 +102,43 @@ namespace TheQuest
                     WeaponInRoom = new Bow(this, GetRandomLocation(random));
                     break;
                 case 4:
-                    Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)) };
-                    Enemies = new List<Enemy> { new Ghost(this, GetRandomLocation(random)) };
-                    if (player doesnt have a bow) {
+                    Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)),
+                                                new Ghost(this, GetRandomLocation(random)) };
+                    /*if (player doesnt have a bow) {
                         WeaponInRoom = new Bow(this, GetRandomLocation(random));
                     }
                     else if (player doesnt have a blue potion)
                     {
                         WeaponInRoom = new BluePotion(this, GetRandomLocation(random));
-                    }
+                    }*/
                     break;
                 case 5:
-                    Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)) };
-                    Enemies = new List<Enemy> { new Ghoul(this, GetRandomLocation(random)) };
+                    Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)),
+                                                new Ghoul(this, GetRandomLocation(random)) };
                     WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
                     break;
                 case 6:
-                    Enemies = new List<Enemy> { new Ghost(this, GetRandomLocation(random)) };
-                    Enemies = new List<Enemy> { new Ghoul(this, GetRandomLocation(random)) };
+                    Enemies = new List<Enemy> { new Ghost(this, GetRandomLocation(random)),
+                                                new Ghoul(this, GetRandomLocation(random)) };
                     WeaponInRoom = new Mace(this, GetRandomLocation(random));
                     break;
                 case 7:
-                    Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)) };
-                    Enemies = new List<Enemy> { new Ghost(this, GetRandomLocation(random)) };
-                    Enemies = new List<Enemy> { new Ghoul(this, GetRandomLocation(random)) };
-                    if (player doesnt have mace) {
+                    Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)),
+                                                new Ghost(this, GetRandomLocation(random)),
+                                                new Ghoul(this, GetRandomLocation(random)) };
+                    /*if (player doesnt have mace) {
                         WeaponInRoom = new Mace(this, GetRandomLocation(random));
                     }
                     else if (player doesnt have red potion) {
                         WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
                     }
                     WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
-                    break;
+                    */break;
                 case 8:
                     // the game ends
+                    // using Systems.Windows.Forms
                     Application.Exit();
+                    break;
             }
         }
     }

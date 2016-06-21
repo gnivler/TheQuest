@@ -1,66 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="TheQuest.Weapon" Collapsed="true">
-    <Position X="3.5" Y="0.5" Width="1.5" />
+  <Class Name="TheQuest.Weapon">
+    <Position X="4.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAAAAAAAAAQAAIEAAAAAAAAAAAABAAA=</HashCode>
       <FileName>Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheQuest.Player" Collapsed="true">
-    <Position X="12.75" Y="0.5" Width="1.5" />
+  <Class Name="TheQuest.Player">
+    <Position X="10.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAIAAAAAAAAIABAAAAIBAAAAiAAAAAAAAABA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheQuest.Bat" Collapsed="true">
-    <Position X="9" Y="2" Width="1.5" />
+  <Class Name="TheQuest.Bat">
+    <Position X="9.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Bat.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheQuest.Bow" Collapsed="true">
-    <Position X="5.25" Y="2" Width="1.5" />
+  <Class Name="TheQuest.Bow">
+    <Position X="5.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Bow.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheQuest.Enemy" Collapsed="true">
-    <Position X="9" Y="0.5" Width="1.5" />
+  <Class Name="TheQuest.Enemy">
+    <Position X="8.25" Y="1.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgKAAAAAAAAIABgAAAAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheQuest.Ghoul" Collapsed="true">
-    <Position X="7.25" Y="2" Width="1.5" />
+  <Class Name="TheQuest.Ghoul">
+    <Position X="8" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Ghoul.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheQuest.Ghost" Collapsed="true">
-    <Position X="10.75" Y="2" Width="1.5" />
+  <Class Name="TheQuest.Ghost">
+    <Position X="6.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Ghost.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheQuest.Mace" Collapsed="true">
-    <Position X="1.75" Y="2" Width="1.5" />
+  <Class Name="TheQuest.Mace">
+    <Position X="1.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Mace.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheQuest.Sword" Collapsed="true">
-    <Position X="3.5" Y="2" Width="1.5" />
+  <Class Name="TheQuest.Sword">
+    <Position X="3.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheQuest.RedPotion">
+    <Position X="2.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>RedPotion.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TheQuest.BluePotion">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>BluePotion.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TheQuest.Mover">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgABIAAAAAAAAIAAAACAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Mover.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheQuest.Game">
+    <Position X="12.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAAIAACAIAAAgAAAAIAIEABAEhCABAABAAAAA=</HashCode>
+      <FileName>Game.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

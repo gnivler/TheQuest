@@ -49,7 +49,7 @@ namespace TheQuest
             {
                 if (weapon.Name == weaponName)
                 {
-                    equippedWeapon = weaponName;
+                    equippedWeapon = weapon;
                 }
             }
         }

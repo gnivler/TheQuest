@@ -38,16 +38,16 @@ namespace TheQuest
             {
                 foreach (Enemy enemy in game.Enemies)
                 {
-                    if (Nearby(enemy.Location, target, distance))
+                    /*if (Nearby(enemy.Location, target, distance))
                     {
                         enemy.Hit(damage, random);
                         return true;
-                    }
+                    }*/
                 }
                 // the DamageEnemy() method is called by Attack().  It attempts to find an enemy in a certain direction and radius.
                 // if it does, it calls the enemy's Hit() method and returns true
                 // If no enemy is found, it returns false
-                target = Move(direction, target, game.Boundaries);
+                //target = Move(direction, target, game.Boundaries);
             }
             return false;
         }
