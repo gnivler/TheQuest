@@ -59,9 +59,14 @@ namespace TheQuest
             base.location = Move(direction, game.Boundaries);
             if (!game.WeaponInRoom.PickedUp)
             {
+                if (Nearby(game.WeaponInRoom.Location, 30))
+                {
+                    game.WeaponInRoom.PickUpWeapon();
+                    inventory.Add(game.WeaponInRoom);
+                }
                 // see if the weapon is nearby and possibly pick it up
                 // when the player picks up a weapon, it needs to disappear from the dungeon and appear in the inventory
-                // the WEapon and form will handle making the weapon's PictureBox invisible when the player picks it up
+                // the Weapon and form will handle making the weapon's PictureBox invisible when the player picks it up
                 // that's not the job of the Player class
             }
         }

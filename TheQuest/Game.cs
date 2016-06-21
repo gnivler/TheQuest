@@ -90,7 +90,7 @@ namespace TheQuest
             switch (level)
             {
                 case 1:
-                    Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)), };
+                    Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)) };
                     WeaponInRoom = new Sword(this, GetRandomLocation(random));
                     break;
                 case 2:

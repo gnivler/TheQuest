@@ -11,7 +11,6 @@ namespace TheQuest
     {
         public Sword(Game game, Point location) : base(game, location)
         {
-
         }
 
         public override string Name {  get { return "Sword"; } }

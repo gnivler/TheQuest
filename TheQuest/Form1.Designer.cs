@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.player = new System.Windows.Forms.PictureBox();
+            this.avatar = new System.Windows.Forms.PictureBox();
             this.sword = new System.Windows.Forms.PictureBox();
             this.bat = new System.Windows.Forms.PictureBox();
             this.ghoul = new System.Windows.Forms.PictureBox();
@@ -44,24 +44,24 @@
             this.inventoryBow = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.batLabel = new System.Windows.Forms.Label();
+            this.ghostLabel = new System.Windows.Forms.Label();
+            this.ghoulLabel = new System.Windows.Forms.Label();
             this.playerHitPoints = new System.Windows.Forms.Label();
             this.batHitPoints = new System.Windows.Forms.Label();
             this.ghostHitPoints = new System.Windows.Forms.Label();
             this.ghoulHitPoints = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.moveLeft = new System.Windows.Forms.Button();
-            this.moveUp = new System.Windows.Forms.Button();
-            this.moveRight = new System.Windows.Forms.Button();
             this.moveDown = new System.Windows.Forms.Button();
+            this.moveRight = new System.Windows.Forms.Button();
+            this.moveUp = new System.Windows.Forms.Button();
+            this.moveLeft = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.attackDown = new System.Windows.Forms.Button();
             this.attackRight = new System.Windows.Forms.Button();
             this.attackUp = new System.Windows.Forms.Button();
             this.attackLeft = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghoul)).BeginInit();
@@ -80,17 +80,16 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // player
+            // avatar
             // 
-            this.player.BackColor = System.Drawing.Color.Transparent;
-            this.player.Image = global::TheQuest.Properties.Resources.player;
-            this.player.Location = new System.Drawing.Point(87, 65);
-            this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(30, 30);
-            this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.player.TabIndex = 0;
-            this.player.TabStop = false;
-            this.player.Visible = false;
+            this.avatar.BackColor = System.Drawing.Color.Transparent;
+            this.avatar.Image = global::TheQuest.Properties.Resources.player;
+            this.avatar.Location = new System.Drawing.Point(87, 65);
+            this.avatar.Name = "avatar";
+            this.avatar.Size = new System.Drawing.Size(30, 30);
+            this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatar.TabIndex = 0;
+            this.avatar.TabStop = false;
             // 
             // sword
             // 
@@ -251,9 +250,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.batLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ghostLabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ghoulLabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.playerHitPoints, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.batHitPoints, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.ghostHitPoints, 1, 2);
@@ -277,32 +276,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Player";
             // 
-            // label2
+            // batLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Bat";
+            this.batLabel.AutoSize = true;
+            this.batLabel.Location = new System.Drawing.Point(3, 13);
+            this.batLabel.Name = "batLabel";
+            this.batLabel.Size = new System.Drawing.Size(23, 13);
+            this.batLabel.TabIndex = 1;
+            this.batLabel.Text = "Bat";
             // 
-            // label3
+            // ghostLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Ghost";
+            this.ghostLabel.AutoSize = true;
+            this.ghostLabel.Location = new System.Drawing.Point(3, 26);
+            this.ghostLabel.Name = "ghostLabel";
+            this.ghostLabel.Size = new System.Drawing.Size(35, 13);
+            this.ghostLabel.TabIndex = 2;
+            this.ghostLabel.Text = "Ghost";
             // 
-            // label4
+            // ghoulLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Ghoul";
+            this.ghoulLabel.AutoSize = true;
+            this.ghoulLabel.Location = new System.Drawing.Point(3, 39);
+            this.ghoulLabel.Name = "ghoulLabel";
+            this.ghoulLabel.Size = new System.Drawing.Size(35, 13);
+            this.ghoulLabel.TabIndex = 3;
+            this.ghoulLabel.Text = "Ghoul";
             // 
             // playerHitPoints
             // 
@@ -349,37 +348,10 @@
             this.groupBox1.Controls.Add(this.moveLeft);
             this.groupBox1.Location = new System.Drawing.Point(377, 307);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(67, 80);
+            this.groupBox1.Size = new System.Drawing.Size(67, 72);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Move";
-            // 
-            // moveLeft
-            // 
-            this.moveLeft.Location = new System.Drawing.Point(4, 32);
-            this.moveLeft.Name = "moveLeft";
-            this.moveLeft.Size = new System.Drawing.Size(22, 22);
-            this.moveLeft.TabIndex = 0;
-            this.moveLeft.Text = "←";
-            this.moveLeft.UseVisualStyleBackColor = true;
-            // 
-            // moveUp
-            // 
-            this.moveUp.Location = new System.Drawing.Point(24, 13);
-            this.moveUp.Name = "moveUp";
-            this.moveUp.Size = new System.Drawing.Size(22, 22);
-            this.moveUp.TabIndex = 1;
-            this.moveUp.Text = "↑";
-            this.moveUp.UseVisualStyleBackColor = true;
-            // 
-            // moveRight
-            // 
-            this.moveRight.Location = new System.Drawing.Point(43, 32);
-            this.moveRight.Name = "moveRight";
-            this.moveRight.Size = new System.Drawing.Size(22, 22);
-            this.moveRight.TabIndex = 2;
-            this.moveRight.Text = "→";
-            this.moveRight.UseVisualStyleBackColor = true;
             // 
             // moveDown
             // 
@@ -389,6 +361,37 @@
             this.moveDown.TabIndex = 3;
             this.moveDown.Text = "↓";
             this.moveDown.UseVisualStyleBackColor = true;
+            this.moveDown.Click += new System.EventHandler(this.moveDown_Click);
+            // 
+            // moveRight
+            // 
+            this.moveRight.Location = new System.Drawing.Point(43, 32);
+            this.moveRight.Name = "moveRight";
+            this.moveRight.Size = new System.Drawing.Size(22, 22);
+            this.moveRight.TabIndex = 2;
+            this.moveRight.Text = "→";
+            this.moveRight.UseVisualStyleBackColor = true;
+            this.moveRight.Click += new System.EventHandler(this.moveRight_Click);
+            // 
+            // moveUp
+            // 
+            this.moveUp.Location = new System.Drawing.Point(24, 13);
+            this.moveUp.Name = "moveUp";
+            this.moveUp.Size = new System.Drawing.Size(22, 22);
+            this.moveUp.TabIndex = 1;
+            this.moveUp.Text = "↑";
+            this.moveUp.UseVisualStyleBackColor = true;
+            this.moveUp.Click += new System.EventHandler(this.moveUp_Click);
+            // 
+            // moveLeft
+            // 
+            this.moveLeft.Location = new System.Drawing.Point(4, 32);
+            this.moveLeft.Name = "moveLeft";
+            this.moveLeft.Size = new System.Drawing.Size(22, 22);
+            this.moveLeft.TabIndex = 0;
+            this.moveLeft.Text = "←";
+            this.moveLeft.UseVisualStyleBackColor = true;
+            this.moveLeft.Click += new System.EventHandler(this.moveLeft_Click);
             // 
             // groupBox2
             // 
@@ -399,7 +402,7 @@
             this.groupBox2.Controls.Add(this.attackLeft);
             this.groupBox2.Location = new System.Drawing.Point(459, 308);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(67, 79);
+            this.groupBox2.Size = new System.Drawing.Size(67, 72);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Attack";
@@ -412,6 +415,7 @@
             this.attackDown.TabIndex = 3;
             this.attackDown.Text = "↓";
             this.attackDown.UseVisualStyleBackColor = true;
+            this.attackDown.Click += new System.EventHandler(this.attackDown_Click);
             // 
             // attackRight
             // 
@@ -421,6 +425,7 @@
             this.attackRight.TabIndex = 2;
             this.attackRight.Text = "→";
             this.attackRight.UseVisualStyleBackColor = true;
+            this.attackRight.Click += new System.EventHandler(this.attackRight_Click);
             // 
             // attackUp
             // 
@@ -430,6 +435,7 @@
             this.attackUp.TabIndex = 1;
             this.attackUp.Text = "↑";
             this.attackUp.UseVisualStyleBackColor = true;
+            this.attackUp.Click += new System.EventHandler(this.attackUp_Click);
             // 
             // attackLeft
             // 
@@ -439,6 +445,7 @@
             this.attackLeft.TabIndex = 0;
             this.attackLeft.Text = "←";
             this.attackLeft.UseVisualStyleBackColor = true;
+            this.attackLeft.Click += new System.EventHandler(this.attackLeft_Click);
             // 
             // Form1
             // 
@@ -454,7 +461,7 @@
             this.Controls.Add(this.inventoryBluePotion);
             this.Controls.Add(this.inventoryRedPotion);
             this.Controls.Add(this.inventorySword);
-            this.Controls.Add(this.player);
+            this.Controls.Add(this.avatar);
             this.Controls.Add(this.mace);
             this.Controls.Add(this.bluePotion);
             this.Controls.Add(this.redPotion);
@@ -467,10 +474,11 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "                                                                                 " +
-    "The Quest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "                                                                                T" +
+    "he Quest";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghoul)).EndInit();
@@ -494,7 +502,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox player;
+        private System.Windows.Forms.PictureBox avatar;
         private System.Windows.Forms.PictureBox sword;
         private System.Windows.Forms.PictureBox bat;
         private System.Windows.Forms.PictureBox ghoul;
@@ -510,9 +518,9 @@
         private System.Windows.Forms.PictureBox inventoryBow;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label batLabel;
+        private System.Windows.Forms.Label ghostLabel;
+        private System.Windows.Forms.Label ghoulLabel;
         private System.Windows.Forms.Label playerHitPoints;
         private System.Windows.Forms.Label batHitPoints;
         private System.Windows.Forms.Label ghostHitPoints;

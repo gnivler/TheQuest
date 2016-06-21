@@ -29,14 +29,14 @@ namespace TheQuest
 
         public void UpdateCharacters()
         {
-            player.Location = game.PlayerLocation;
+            avatar.Location = game.PlayerLocation;
             playerHitPoints.Text = game.PlayerHitPoints.ToString();
-            bool showBat;
-            bool showGhost;
-            bool showGhoul;
+            bool showBat = false;
+            bool showGhost = false;
+            bool showGhoul = false;
             int enemiesShown = 0;
-            // more code to go here
 
+            // update enemy visibility and location
             foreach (Enemy enemy in game.Enemies)
             {
                 if (enemy is Bat)
@@ -46,13 +46,8 @@ namespace TheQuest
                     if (enemy.HitPoints > 0)
                     {
                         showBat = true;
+                        bat.Visible = true;
                         enemiesShown++;
-                    }
-                    else
-                    {
-                        showBat = false;
-                        bat.Visible = false;
-                        batHitPoints.Text = "";
                     }
                 }
                 if (enemy is Ghost)
@@ -62,13 +57,8 @@ namespace TheQuest
                     if (enemy.HitPoints > 0)
                     {
                         showGhost = true;
+                        ghost.Visible = true;
                         enemiesShown++;
-                    }
-                    else
-                    {
-                        showGhost = false;
-                        ghost.Visible = false;
-                        ghostHitPoints.Text = "";
                     }
                 }
                 if (enemy is Ghoul)
@@ -78,16 +68,141 @@ namespace TheQuest
                     if (enemy.HitPoints > 0)
                     {
                         showGhoul = true;
+                        ghoul.Visible = true;
                         enemiesShown++;
-                    }
-                    else
-                    {
-                        showGhoul = false;
-                        ghoul.Visible = false;
-                        ghoulHitPoints.Text = "";
                     }
                 }
             }
+
+            if (!showBat)
+            {
+                bat.Visible = false;
+                batLabel.Visible = false;
+                batHitPoints.Text = "";
+            }
+            if (!showGhost)
+            {
+                ghost.Visible = false;
+                ghostLabel.Visible = false;
+                ghostHitPoints.Text = "";
+            }
+            if (!showGhoul)
+            {
+                ghoul.Visible = false;
+                ghoulLabel.Visible = false;
+                ghoulHitPoints.Text = "";
+            }
+
+            // update visibility for items on the floor
+            sword.Visible = false;
+            bow.Visible = false;
+            mace.Visible = false;
+            redPotion.Visible = false;
+            bluePotion.Visible = false;
+            Control weaponControl = null;
+            switch (game.WeaponInRoom.Name)
+            {
+                case "Sword":
+                    weaponControl = sword; break;
+                case "Bow":
+                    weaponControl = bow; break;
+                case "Mace":
+                    weaponControl = mace; break;
+                case "Blue Potion":
+                    weaponControl = bluePotion; break;
+                case "Red Potion":
+                    weaponControl = redPotion; break;
+            }
+            weaponControl.Visible = true;
+
+            // update inventory icon visibility
+            if (game.CheckPlayerInventory("Sword"))
+            {
+                inventorySword.Visible = true;
+            }
+            if (game.CheckPlayerInventory("Bow"))
+            {
+                inventoryBow.Visible = true;
+            }
+            if (game.CheckPlayerInventory("Mace"))
+            {
+                inventoryMace.Visible = true;
+            }
+            if (game.CheckPlayerInventory("Blue Potion"))
+            {
+                inventoryBluePotion.Visible = true;
+            }
+            if (game.CheckPlayerInventory("Red Potion"))
+            {
+                inventoryRedPotion.Visible = true;
+            }
+
+            weaponControl.Location = game.WeaponInRoom.Location;
+            if (game.WeaponInRoom.PickedUp)
+            {
+                weaponControl.Visible = false;
+            }
+            else
+            {
+                weaponControl.Visible = true;
+            }
+
+            if (game.PlayerHitPoints <= 0)
+            {
+                MessageBox.Show("You died");
+                Application.Exit();
+            }
+
+            if (enemiesShown < 1)
+            {
+                MessageBox.Show("You have defeated the enemies on this level");
+                game.NewLevel(random);
+                UpdateCharacters();
+            }
+        }
+
+        private void moveUp_Click(object sender, EventArgs e)
+        {
+            game.Move(Direction.Up, random);
+            UpdateCharacters();
+        }
+
+        private void moveRight_Click(object sender, EventArgs e)
+        {
+            game.Move(Direction.Right, random);
+            UpdateCharacters();
+        }
+
+        private void moveDown_Click(object sender, EventArgs e)
+        {
+            game.Move(Direction.Down, random);
+            UpdateCharacters();
+        }
+
+        private void moveLeft_Click(object sender, EventArgs e)
+        {
+            game.Move(Direction.Left, random);
+            UpdateCharacters();
+        }
+
+        private void attackUp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void attackLeft_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void attackRight_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void attackDown_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
