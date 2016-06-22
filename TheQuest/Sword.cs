@@ -13,7 +13,9 @@ namespace TheQuest
         {
         }
 
-        public override string Name {  get { return "Sword"; } }
+        //public override string Name {  get { return "Sword"; } }
+        // written as expression bodied:
+        public override string Name => "Sword";
         public override void Attack(Direction direction, Random random)
         {
             // your code goes here
@@ -48,6 +50,21 @@ namespace TheQuest
                     DamageEnemy(attackDir, 10, 3, random);
                 }
             }
+
+            /* another way to achieve 'rotation' on the attack direction
+             * this would have to be duplicated for counter-clockwise
+            switch (direction)
+            {
+                case Direction.Left:
+                    attackDir = Direction.Up; break;
+                case Direction.Up:
+                    attackDir = Direction.Right; break;
+                case Direction.Right:
+                    attackDir = Direction.Down; break;
+                case Direction.Down:
+                    attackDir = Direction.Left; break;
+
+            }*/
         }
     }
 }

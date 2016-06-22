@@ -13,10 +13,13 @@ namespace TheQuest
         {
         }
 
-        public override string Name { get { return "Bow"; } }
+        //public override string Name { get { return "Bow"; } }
+        // expression bodied syntax:
+        public override string Name => "Bow";
         public override void Attack(Direction direction, Random random)
         {
             // your code goes here
+            DamageEnemy(direction, 30, 1, random);
         }
     }
 }

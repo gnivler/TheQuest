@@ -21,7 +21,7 @@ namespace TheQuest
         public int PlayerHitPoints {  get { return player.HitPoints; } }
         public IEnumerable<string> PlayerWeapons { get { return player.Weapons; } }
         private int level = 0;
-        public int Level { get { return level; } }
+        public int Level => level;
 
         // the rectangle object has a Top, Bottom, Left and Right field and works perfectly for the game area
         private Rectangle boundaries;
@@ -51,7 +51,12 @@ namespace TheQuest
 
         public bool CheckPlayerInventory(string weaponName)
         {
-            return player.Weapons.Contains(weaponName);
+            if (player.Weapons.Contains(weaponName))
+            {
+                // this method also returns true if it's not potion
+                return player.IsWeaponOrUsablePotion(weaponName);
+            }
+            return false;
         }
 
         public void HitPlayer(int maxDamage, Random random)
@@ -83,6 +88,10 @@ namespace TheQuest
 
         // we only added the case for Level 1, it's your job to add the cases for the other levels
         // we've only got room in the inventory for one blue and one red potion, so the game shouldn't add them if the player already has each
+        /// <summary>
+        /// spawns enemy and weapon objects
+        /// </summary>
+        /// <param name="random"></param>
         public void NewLevel(Random random)
         {
             level++;
@@ -103,13 +112,14 @@ namespace TheQuest
                 case 4:
                     Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)),
                                                 new Ghost(this, GetRandomLocation(random)) };
-                    /*if (player doesnt have a bow) {
+                    // this should spawn nothing if a Bow and Blue Potion already exist in inventory
+                    if (!CheckPlayerInventory("Bow")) {
                         WeaponInRoom = new Bow(this, GetRandomLocation(random));
                     }
-                    else if (player doesnt have a blue potion)
+                    else if  (!CheckPlayerInventory("Blue Potion"))
                     {
                         WeaponInRoom = new BluePotion(this, GetRandomLocation(random));
-                    }*/
+                    }
                     break;
                 case 5:
                     Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)),
@@ -125,17 +135,20 @@ namespace TheQuest
                     Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)),
                                                 new Ghost(this, GetRandomLocation(random)),
                                                 new Ghoul(this, GetRandomLocation(random)) };
-                    /*if (player doesnt have mace) {
+                    // this should spawn nothing if a Mace and Red Potion already exist in inventory
+                    if (!CheckPlayerInventory("Mace"))
+                    {
                         WeaponInRoom = new Mace(this, GetRandomLocation(random));
                     }
-                    else if (player doesnt have red potion) {
+                    else if (!CheckPlayerInventory("Red Potion"))
+                    {
                         WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
                     }
-                    WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
-                    */break;
+                    break;
                 case 8:
                     // the game ends
                     // using Systems.Windows.Forms
+                    // UI freaks out from this?
                     Application.Exit();
                     break;
             }

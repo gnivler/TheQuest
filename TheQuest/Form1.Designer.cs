@@ -61,6 +61,7 @@
             this.attackRight = new System.Windows.Forms.Button();
             this.attackUp = new System.Windows.Forms.Button();
             this.attackLeft = new System.Windows.Forms.Button();
+            this.levelLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bat)).BeginInit();
@@ -452,12 +453,23 @@
             this.attackLeft.UseVisualStyleBackColor = true;
             this.attackLeft.Click += new System.EventHandler(this.attackLeft_Click);
             // 
+            // levelLabel
+            // 
+            this.levelLabel.BackColor = System.Drawing.Color.Transparent;
+            this.levelLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.levelLabel.Location = new System.Drawing.Point(275, 19);
+            this.levelLabel.Name = "levelLabel";
+            this.levelLabel.Size = new System.Drawing.Size(50, 19);
+            this.levelLabel.TabIndex = 17;
+            this.levelLabel.Text = "Level: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TheQuest.Properties.Resources.dungeon600x400;
             this.ClientSize = new System.Drawing.Size(600, 399);
+            this.Controls.Add(this.levelLabel);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -540,6 +552,7 @@
         private System.Windows.Forms.Button attackRight;
         private System.Windows.Forms.Button attackUp;
         private System.Windows.Forms.Button attackLeft;
+        private System.Windows.Forms.Label levelLabel;
     }
 }
 

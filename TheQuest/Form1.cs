@@ -31,6 +31,7 @@ namespace TheQuest
         {
             avatar.Location = game.PlayerLocation;
             playerHitPoints.Text = game.PlayerHitPoints.ToString();
+            levelLabel.Text = $"Level {game.Level}";
             bool showBat = false;
             bool showGhost = false;
             bool showGhoul = false;
@@ -46,7 +47,6 @@ namespace TheQuest
                     if (enemy.HitPoints > 0)
                     {
                         showBat = true;
-                        bat.Visible = true;
                         enemiesShown++;
                     }
                 }
@@ -57,7 +57,6 @@ namespace TheQuest
                     if (enemy.HitPoints > 0)
                     {
                         showGhost = true;
-                        ghost.Visible = true;
                         enemiesShown++;
                     }
                 }
@@ -68,25 +67,39 @@ namespace TheQuest
                     if (enemy.HitPoints > 0)
                     {
                         showGhoul = true;
-                        ghoul.Visible = true;
                         enemiesShown++;
                     }
                 }
             }
 
-            if (!showBat)
+            if (showBat)
+            {
+                bat.Visible = true;
+                batLabel.Visible = true;
+            }
+            else
             {
                 bat.Visible = false;
                 batLabel.Visible = false;
                 batHitPoints.Text = "";
             }
-            if (!showGhost)
+            if (showGhost)
+            {
+                ghost.Visible = true;
+                ghostLabel.Visible = true;
+            }
+            else
             {
                 ghost.Visible = false;
                 ghostLabel.Visible = false;
                 ghostHitPoints.Text = "";
             }
-            if (!showGhoul)
+            if (showGhoul)
+            {
+                ghoul.Visible = true;
+                ghoulLabel.Visible = true;
+            }
+            else
             {
                 ghoul.Visible = false;
                 ghoulLabel.Visible = false;
@@ -128,15 +141,23 @@ namespace TheQuest
             {
                 inventoryMace.Visible = true;
             }
+            // the potions need an 'off' block since they can go away, unlike weapons
             if (game.CheckPlayerInventory("Blue Potion"))
             {
                 inventoryBluePotion.Visible = true;
+            }
+            else
+            {
+                inventoryBluePotion.Visible = false;
             }
             if (game.CheckPlayerInventory("Red Potion"))
             {
                 inventoryRedPotion.Visible = true;
             }
-
+            else
+            {
+                inventoryRedPotion.Visible = false;
+            }
             weaponControl.Location = game.WeaponInRoom.Location;
             if (game.WeaponInRoom.PickedUp)
             {
@@ -213,26 +234,50 @@ namespace TheQuest
         {
             game.Equip("Sword");
             inventorySword.BorderStyle = BorderStyle.FixedSingle;
+            inventoryBow.BorderStyle = BorderStyle.None;
+            inventoryMace.BorderStyle = BorderStyle.None;
+            inventoryRedPotion.BorderStyle = BorderStyle.None;
+            inventoryBluePotion.BorderStyle = BorderStyle.None;
         }
 
         private void inventoryBow_Click(object sender, EventArgs e)
         {
-
+            game.Equip("Bow");
+            inventorySword.BorderStyle = BorderStyle.None;
+            inventoryBow.BorderStyle = BorderStyle.FixedSingle;
+            inventoryMace.BorderStyle = BorderStyle.None;
+            inventoryRedPotion.BorderStyle = BorderStyle.None;
+            inventoryBluePotion.BorderStyle = BorderStyle.None;
         }
 
         private void inventoryMace_Click(object sender, EventArgs e)
         {
-
+            game.Equip("Mace");
+            inventorySword.BorderStyle = BorderStyle.None;
+            inventoryBow.BorderStyle = BorderStyle.None;
+            inventoryMace.BorderStyle = BorderStyle.FixedSingle;
+            inventoryRedPotion.BorderStyle = BorderStyle.None;
+            inventoryBluePotion.BorderStyle = BorderStyle.None;
         }
 
         private void inventoryBluePotion_Click(object sender, EventArgs e)
         {
-
+            game.Equip("Blue Potion");
+            inventorySword.BorderStyle = BorderStyle.None;
+            inventoryBow.BorderStyle = BorderStyle.None;
+            inventoryMace.BorderStyle = BorderStyle.None;
+            inventoryRedPotion.BorderStyle = BorderStyle.None;
+            inventoryBluePotion.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void inventoryRedPotion_Click(object sender, EventArgs e)
         {
-
+            game.Equip("Red Potion");
+            inventorySword.BorderStyle = BorderStyle.None;
+            inventoryBow.BorderStyle = BorderStyle.None;
+            inventoryMace.BorderStyle = BorderStyle.None;
+            inventoryRedPotion.BorderStyle = BorderStyle.FixedSingle;
+            inventoryBluePotion.BorderStyle = BorderStyle.None;
         }
     }
 }

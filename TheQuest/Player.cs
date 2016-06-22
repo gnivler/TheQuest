@@ -54,6 +54,42 @@ namespace TheQuest
             }
         }
 
+        public bool IsWeaponOrUsablePotion(string weaponName)
+        {
+            foreach (Weapon item in inventory)
+            {
+                // only interested in processing items that match the parameter
+                if (item.Name == weaponName)
+                {
+                    if (item is IPotion)
+                    {
+                        IPotion potion = (IPotion)item;
+                        if (potion.Used)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            // this should never be reached, try/catch to make sure I haven't screwed up the logic above
+            try
+            {
+                return true;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public void Move(Direction direction)
         {
             base.location = Move(direction, game.Boundaries);

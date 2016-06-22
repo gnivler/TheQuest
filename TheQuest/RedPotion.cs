@@ -13,13 +13,14 @@ namespace TheQuest
         {
         }
 
-        public bool Used { get; }
-
-        public override string Name { get { return "Red Potion"; } }
+        private bool used;
+        public bool Used => used;
+        public override string Name => "Red Potion";
 
         public override void Attack(Direction direction, Random random)
         {
-            throw new NotImplementedException();
+            game.IncreasePlayerHealth(10, random);
+            used = true;
         }
     }
 }
