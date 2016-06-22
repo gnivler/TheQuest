@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace TheQuest
 {
@@ -97,7 +96,7 @@ namespace TheQuest
                     if (!CheckPlayerInventory("Bow")) {
                         WeaponInRoom = new Bow(this, GetRandomLocation(random));
                     }
-                    else if  (!CheckPlayerInventory("Blue Potion"))
+                    else if  (!CheckPlayerPotion("Blue Potion"))
                     {
                         WeaponInRoom = new BluePotion(this, GetRandomLocation(random));
                     }
@@ -121,16 +120,17 @@ namespace TheQuest
                     {
                         WeaponInRoom = new Mace(this, GetRandomLocation(random));
                     }
-                    else if (!CheckPlayerInventory("Red Potion"))
+                    else if (!CheckPlayerPotion("Red Potion"))
                     {
                         WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
                     }
                     break;
                 case 8:
+                default:
                     // the game ends
-                    // using Systems.Windows.Forms
                     // UI freaks out from this?
-                    Application.Exit();
+                    System.Windows.Forms.MessageBox.Show("You've cleared the dungeon");               
+                    System.Windows.Forms.Application.Exit();
                     break;
             }
         }

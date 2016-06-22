@@ -413,6 +413,7 @@
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Attack";
+            this.groupBox2.Visible = false;
             // 
             // attackDown
             // 

@@ -3,14 +3,14 @@
   <Class Name="TheQuest.Weapon">
     <Position X="4.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAAAAAAQAAIEAAAAAAAAAAAABAAA=</HashCode>
+      <HashCode>AAAQgAAAAAAAAAAAAAAAAAQAAIUAAAAAAAAAAAABAAA=</HashCode>
       <FileName>Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheQuest.Player">
     <Position X="10.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAIAAAAAAAAIABAAAAIBAAAAiAAAAAAAAABA=</HashCode>
+      <HashCode>AAACAAAAAIAAABAAAAIABAAAAIBAAAAiAAAAAAAAABA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TheQuest.Bow">
-    <Position X="5.25" Y="6.75" Width="1.5" />
+    <Position X="5.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Bow.cs</FileName>
@@ -50,14 +50,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TheQuest.Mace">
-    <Position X="1.75" Y="6.75" Width="1.5" />
+    <Position X="1.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Mace.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheQuest.Sword">
-    <Position X="3.5" Y="6.75" Width="1.5" />
+    <Position X="3.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sword.cs</FileName>
@@ -66,7 +66,7 @@
   <Class Name="TheQuest.RedPotion">
     <Position X="2.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAEA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAQAAAAEA=</HashCode>
       <FileName>RedPotion.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -74,7 +74,7 @@
   <Class Name="TheQuest.BluePotion">
     <Position X="0.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAEA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAQAAAAEA=</HashCode>
       <FileName>BluePotion.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -89,7 +89,7 @@
   <Class Name="TheQuest.Game">
     <Position X="12.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAQAAAgAAIAACAIAAAgAAAAIAIEABAEhCABAABAAAAA=</HashCode>
+      <HashCode>AAQAAAgAAIAACAIAAAgAAAAIAIEABAEhCAJAABAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
   </Class>
