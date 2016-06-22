@@ -106,12 +106,7 @@ namespace TheQuest
                 ghoulHitPoints.Text = "";
             }
 
-            // update visibility for items on the floor
-            sword.Visible = false;
-            bow.Visible = false;
-            mace.Visible = false;
-            redPotion.Visible = false;
-            bluePotion.Visible = false;
+            // provided code figures out which WeaponInRoom gets assigned to weaponControl and makes it visible
             Control weaponControl = null;
             switch (game.WeaponInRoom.Name)
             {
@@ -142,18 +137,11 @@ namespace TheQuest
                 inventoryMace.Visible = true;
             }
             // the potions need an 'off' block since they can go away, unlike weapons
-            inventoryBluePotion.Visible = (game.CheckPlayerInventory("Blue Potion")) ? true : false;
-            inventoryRedPotion.Visible = (game.CheckPlayerInventory("Red Potion")) ? true : false;
+            inventoryBluePotion.Visible = (game.CheckPlayerPotion("Blue Potion")) ? true : false;
+            inventoryRedPotion.Visible = (game.CheckPlayerPotion("Red Potion")) ? true : false;
 
             weaponControl.Location = game.WeaponInRoom.Location;
-            if (game.WeaponInRoom.PickedUp)
-            {
-                weaponControl.Visible = false;
-            }
-            else
-            {
-                weaponControl.Visible = true;
-            }
+            weaponControl.Visible = (game.WeaponInRoom.PickedUp) ? false : true;
 
             if (game.PlayerHitPoints <= 0)
             {
@@ -225,6 +213,8 @@ namespace TheQuest
             inventoryMace.BorderStyle = BorderStyle.None;
             inventoryRedPotion.BorderStyle = BorderStyle.None;
             inventoryBluePotion.BorderStyle = BorderStyle.None;
+            groupBox2.Visible = true;
+            drink.Visible = false;
         }
 
         private void inventoryBow_Click(object sender, EventArgs e)
@@ -235,6 +225,9 @@ namespace TheQuest
             inventoryMace.BorderStyle = BorderStyle.None;
             inventoryRedPotion.BorderStyle = BorderStyle.None;
             inventoryBluePotion.BorderStyle = BorderStyle.None;
+            groupBox2.Visible = true;
+            drink.Visible = false;
+
         }
 
         private void inventoryMace_Click(object sender, EventArgs e)
@@ -245,6 +238,9 @@ namespace TheQuest
             inventoryMace.BorderStyle = BorderStyle.FixedSingle;
             inventoryRedPotion.BorderStyle = BorderStyle.None;
             inventoryBluePotion.BorderStyle = BorderStyle.None;
+            groupBox2.Visible = true;
+            drink.Visible = false;
+
         }
 
         private void inventoryBluePotion_Click(object sender, EventArgs e)
@@ -255,6 +251,8 @@ namespace TheQuest
             inventoryMace.BorderStyle = BorderStyle.None;
             inventoryRedPotion.BorderStyle = BorderStyle.None;
             inventoryBluePotion.BorderStyle = BorderStyle.FixedSingle;
+            groupBox2.Visible = false;
+            drink.Visible = true;
         }
 
         private void inventoryRedPotion_Click(object sender, EventArgs e)
@@ -265,6 +263,15 @@ namespace TheQuest
             inventoryMace.BorderStyle = BorderStyle.None;
             inventoryRedPotion.BorderStyle = BorderStyle.FixedSingle;
             inventoryBluePotion.BorderStyle = BorderStyle.None;
+            groupBox2.Visible = false;
+            drink.Visible = true;
+        }
+
+        private void drink_Click(object sender, EventArgs e)
+        {
+            game.Attack(Direction.Up, random);
+            drink.Visible = false;
+            UpdateCharacters();
         }
     }
 }

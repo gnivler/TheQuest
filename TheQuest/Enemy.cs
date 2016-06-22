@@ -30,16 +30,10 @@ namespace TheQuest
         public abstract void Move(Random random);
 
         // when the player attacks an enemy, it calls the enemy's Hit() method which substracts a random number of hitpoints
-        public void Hit(int maxDamage, Random random)
-        {
-            HitPoints -= random.Next(1, maxDamage);
-        }
+        public void Hit(int maxDamage, Random random) => HitPoints -= random.Next(1, maxDamage);
 
         // the Enemy class inherited the Nearby() method from Mover which is can use to figure out whether it's near the player
-        protected bool NearPlayer()
-        {
-            return (Nearby(game.PlayerLocation, NearPlayerDistance));
-        }
+        protected bool NearPlayer() => (Nearby(game.PlayerLocation, NearPlayerDistance));
 
         // if you feed FindPlayerDirection() the player's location it'll use the base class's location field to figure out where
         // the player is in relation to the enemy and return a Direction enyum that tells you in which direction the enemy needs

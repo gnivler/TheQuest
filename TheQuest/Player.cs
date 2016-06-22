@@ -54,34 +54,23 @@ namespace TheQuest
             }
         }
 
-        public bool IsWeaponOrUsablePotion(string weaponName)
+        public bool IsPotionUsed(string potionName)
         {
+            // using a temporary variable in case there are 2 potions of one type, otherwise
+            // if the first one were used it would return false and not provide access to the 2nd
+            bool oneAvailable = false;
             foreach (Weapon item in inventory)
             {
-                // only interested in processing items that match the parameter
-                if (item.Name == weaponName)
+                if (item.Name == potionName)
                 {
-                    if (item is IPotion)
+                    IPotion potion = item as IPotion;
+                    if (!potion.Used)
                     {
-                        IPotion potion = (IPotion)item;
-                        return potion.Used;
-                    }
-                    else
-                    {
-                        return true;
+                        oneAvailable = true;
                     }
                 }
             }
-
-            // this should never be reached, try/catch to make sure I haven't screwed up the logic above
-            try
-            {
-                return true;
-            }
-            catch
-            {
-                throw new NotImplementedException();
-            }
+            return oneAvailable;
         }
 
         public void Move(Direction direction)

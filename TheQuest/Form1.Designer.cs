@@ -62,6 +62,7 @@
             this.attackUp = new System.Windows.Forms.Button();
             this.attackLeft = new System.Windows.Forms.Button();
             this.levelLabel = new System.Windows.Forms.Label();
+            this.drink = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bat)).BeginInit();
@@ -463,12 +464,24 @@
             this.levelLabel.TabIndex = 17;
             this.levelLabel.Text = "Level: ";
             // 
+            // drink
+            // 
+            this.drink.Location = new System.Drawing.Point(459, 338);
+            this.drink.Name = "drink";
+            this.drink.Size = new System.Drawing.Size(67, 23);
+            this.drink.TabIndex = 4;
+            this.drink.Text = "Drink";
+            this.drink.UseVisualStyleBackColor = true;
+            this.drink.Visible = false;
+            this.drink.Click += new System.EventHandler(this.drink_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TheQuest.Properties.Resources.dungeon600x400;
             this.ClientSize = new System.Drawing.Size(600, 399);
+            this.Controls.Add(this.drink);
             this.Controls.Add(this.levelLabel);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -553,6 +566,7 @@
         private System.Windows.Forms.Button attackUp;
         private System.Windows.Forms.Button attackLeft;
         private System.Windows.Forms.Label levelLabel;
+        private System.Windows.Forms.Button drink;
     }
 }
 

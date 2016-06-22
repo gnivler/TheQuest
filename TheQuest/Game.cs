@@ -47,16 +47,8 @@ namespace TheQuest
         public void Equip(string weaponName) => player.Equip(weaponName);
         public void HitPlayer(int maxDamage, Random random) => player.Hit(maxDamage, random);
         public void IncreasePlayerHealth(int health, Random random) => player.IncreaseHealth(health, random);
-
-        public bool CheckPlayerInventory(string weaponName)
-        {
-            if (player.Weapons.Contains(weaponName))
-            {
-                // this method also returns true if it's not potion
-                return player.IsWeaponOrUsablePotion(weaponName);
-            }
-            return false;
-        }
+        public bool CheckPlayerInventory(string weaponName) => player.Weapons.Contains(weaponName);
+        public bool CheckPlayerPotion(string potionName) => player.IsPotionUsed(potionName);
 
         // Attack() is almost exactly like Move().  The Player attacks, and the enemies all get a turn to move
         public void Attack(Direction direction, Random random)
@@ -96,9 +88,7 @@ namespace TheQuest
                     break;
                 case 3:
                     Enemies = new List<Enemy> { new Ghost(this, GetRandomLocation(random)) };
-                    //WeaponInRoom = new Bow(this, GetRandomLocation(random));
-                    WeaponInRoom = new BluePotion(this, GetRandomLocation(random));
-
+                    WeaponInRoom = new Bow(this, GetRandomLocation(random));
                     break;
                 case 4:
                     Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)),
