@@ -70,7 +70,6 @@ namespace TheQuest
             player.Attack(direction, random);
             foreach (Enemy enemy in Enemies)
             {
-                // typo?  shouldn't this be enemy.Attack()?
                 enemy.Move(random);
             }
         }

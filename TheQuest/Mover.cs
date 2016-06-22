@@ -30,7 +30,12 @@ namespace TheQuest
         // the Nearby() method checks a Point against this object's current location.  If they're within distance of each other, then it returns true
         public bool Nearby(Point locationToCheck, int distance)
         {
-            if (Math.Abs(location.X - locationToCheck.X) < distance && (Math.Abs(location.Y - locationToCheck.Y) < distance))
+            return (Nearby(locationToCheck, location, distance));
+        }
+
+        public bool Nearby(Point firstPoint, Point secondPoint, int distance)
+        {
+            if (Math.Abs(firstPoint.X - secondPoint.X) < distance && (Math.Abs(firstPoint.Y - secondPoint.Y) < distance))
             {
                 return true;
             }
@@ -38,9 +43,16 @@ namespace TheQuest
         }
 
         // the Move() method tries to move one step in a direction.  If it can, it returns a new Point.  If it hits a boundary it returns the original Point
+
+        // overloaded method design maybe defective!
         public Point Move(Direction direction, Rectangle boundaries)
         {
-            Point newLocation = location;
+            return Move(direction, location, boundaries);
+        }
+
+        public Point Move(Direction direction, Point target, Rectangle boundaries)
+        {
+            Point newLocation = target;
             switch (direction)
             {
                 case Direction.Up:

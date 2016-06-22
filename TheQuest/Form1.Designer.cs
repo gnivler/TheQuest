@@ -198,6 +198,7 @@
             this.inventorySword.TabIndex = 9;
             this.inventorySword.TabStop = false;
             this.inventorySword.Visible = false;
+            this.inventorySword.Click += new System.EventHandler(this.inventorySword_Click);
             // 
             // inventoryRedPotion
             // 
@@ -209,6 +210,7 @@
             this.inventoryRedPotion.TabIndex = 10;
             this.inventoryRedPotion.TabStop = false;
             this.inventoryRedPotion.Visible = false;
+            this.inventoryRedPotion.Click += new System.EventHandler(this.inventoryRedPotion_Click);
             // 
             // inventoryBluePotion
             // 
@@ -220,6 +222,7 @@
             this.inventoryBluePotion.TabIndex = 11;
             this.inventoryBluePotion.TabStop = false;
             this.inventoryBluePotion.Visible = false;
+            this.inventoryBluePotion.Click += new System.EventHandler(this.inventoryBluePotion_Click);
             // 
             // inventoryMace
             // 
@@ -231,6 +234,7 @@
             this.inventoryMace.TabIndex = 12;
             this.inventoryMace.TabStop = false;
             this.inventoryMace.Visible = false;
+            this.inventoryMace.Click += new System.EventHandler(this.inventoryMace_Click);
             // 
             // inventoryBow
             // 
@@ -242,6 +246,7 @@
             this.inventoryBow.TabIndex = 13;
             this.inventoryBow.TabStop = false;
             this.inventoryBow.Visible = false;
+            this.inventoryBow.Click += new System.EventHandler(this.inventoryBow_Click);
             // 
             // tableLayoutPanel1
             // 

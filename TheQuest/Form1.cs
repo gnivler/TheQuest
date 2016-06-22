@@ -187,20 +187,50 @@ namespace TheQuest
 
         private void attackUp_Click(object sender, EventArgs e)
         {
-
+            game.Attack(Direction.Up, random);
+            UpdateCharacters();
         }
 
         private void attackLeft_Click(object sender, EventArgs e)
         {
-
+            game.Attack(Direction.Left, random);
+            UpdateCharacters();
         }
 
         private void attackRight_Click(object sender, EventArgs e)
         {
-
+            game.Attack(Direction.Right, random);
+            UpdateCharacters();
         }
 
         private void attackDown_Click(object sender, EventArgs e)
+        {
+            game.Attack(Direction.Down, random);
+            UpdateCharacters();
+        }
+
+        private void inventorySword_Click(object sender, EventArgs e)
+        {
+            game.Equip("Sword");
+            inventorySword.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void inventoryBow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inventoryMace_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inventoryBluePotion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inventoryRedPotion_Click(object sender, EventArgs e)
         {
 
         }

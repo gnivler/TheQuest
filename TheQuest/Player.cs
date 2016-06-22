@@ -77,6 +77,10 @@ namespace TheQuest
         public void Attack(Direction direction, Random random)
         {
             // your code goes here
+            if (equippedWeapon != null)
+            {
+                equippedWeapon.Attack(direction, random);
+            }
         }
     }
 }
