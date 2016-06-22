@@ -64,14 +64,7 @@ namespace TheQuest
                     if (item is IPotion)
                     {
                         IPotion potion = (IPotion)item;
-                        if (potion.Used)
-                        {
-                            return false;
-                        }
-                        else
-                        {
-                            return true;
-                        }
+                        return potion.Used;
                     }
                     else
                     {
@@ -79,6 +72,7 @@ namespace TheQuest
                     }
                 }
             }
+
             // this should never be reached, try/catch to make sure I haven't screwed up the logic above
             try
             {
@@ -93,6 +87,11 @@ namespace TheQuest
         public void Move(Direction direction)
         {
             base.location = Move(direction, game.Boundaries);
+
+            // see if the weapon is nearby and possibly pick it up
+            // when the player picks up a weapon, it needs to disappear from the dungeon and appear in the inventory
+            // the Weapon and form will handle making the weapon's PictureBox invisible when the player picks it up
+            // that's not the job of the Player class
             if (!game.WeaponInRoom.PickedUp)
             {
                 if (Nearby(game.WeaponInRoom.Location, 30))
@@ -100,10 +99,6 @@ namespace TheQuest
                     game.WeaponInRoom.PickUpWeapon();
                     inventory.Add(game.WeaponInRoom);
                 }
-                // see if the weapon is nearby and possibly pick it up
-                // when the player picks up a weapon, it needs to disappear from the dungeon and appear in the inventory
-                // the Weapon and form will handle making the weapon's PictureBox invisible when the player picks it up
-                // that's not the job of the Player class
             }
         }
 

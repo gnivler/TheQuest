@@ -142,22 +142,9 @@ namespace TheQuest
                 inventoryMace.Visible = true;
             }
             // the potions need an 'off' block since they can go away, unlike weapons
-            if (game.CheckPlayerInventory("Blue Potion"))
-            {
-                inventoryBluePotion.Visible = true;
-            }
-            else
-            {
-                inventoryBluePotion.Visible = false;
-            }
-            if (game.CheckPlayerInventory("Red Potion"))
-            {
-                inventoryRedPotion.Visible = true;
-            }
-            else
-            {
-                inventoryRedPotion.Visible = false;
-            }
+            inventoryBluePotion.Visible = (game.CheckPlayerInventory("Blue Potion")) ? true : false;
+            inventoryRedPotion.Visible = (game.CheckPlayerInventory("Red Potion")) ? true : false;
+
             weaponControl.Location = game.WeaponInRoom.Location;
             if (game.WeaponInRoom.PickedUp)
             {

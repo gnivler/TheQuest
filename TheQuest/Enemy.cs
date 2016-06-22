@@ -9,8 +9,6 @@ namespace TheQuest
 {
     abstract class Enemy : Mover
     {
-        // const are used when the number is never going to change not for a static value that can be adjusted
-        // private const int NearPlayerDistance = 25;
         private int NearPlayerDistance { get; } = 25;
 
         public int HitPoints { get; private set; }
@@ -19,11 +17,7 @@ namespace TheQuest
         {
             get
             {
-                if (HitPoints <= 0)
-                {
-                    return true;
-                }
-                return false;
+                return (HitPoints <= 0) ? true : false;
             }
         }
 

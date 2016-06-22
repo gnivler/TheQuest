@@ -17,15 +17,15 @@ namespace TheQuest
 
         // the game keeps a private Player object.  The form will only interact with this through methods on Game
         private Player player;
-        public  Point PlayerLocation {  get { return player.Location; } }
-        public int PlayerHitPoints {  get { return player.HitPoints; } }
-        public IEnumerable<string> PlayerWeapons { get { return player.Weapons; } }
+        public  Point PlayerLocation => player.Location;
+        public int PlayerHitPoints => player.HitPoints;
+        public IEnumerable<string> PlayerWeapons => player.Weapons;
         private int level = 0;
         public int Level => level;
 
         // the rectangle object has a Top, Bottom, Left and Right field and works perfectly for the game area
         private Rectangle boundaries;
-        public Rectangle Boundaries { get { return boundaries; } }
+        public Rectangle Boundaries => boundaries;
 
         // Game starts out with a bounding box for the dungeon, and creates a new Player object in the dungeon
         public Game(Rectangle boundaries)
@@ -44,10 +44,9 @@ namespace TheQuest
             }
         }
 
-        public void Equip(string weaponName)
-        {
-            player.Equip(weaponName);
-        }
+        public void Equip(string weaponName) => player.Equip(weaponName);
+        public void HitPlayer(int maxDamage, Random random) => player.Hit(maxDamage, random);
+        public void IncreasePlayerHealth(int health, Random random) => player.IncreaseHealth(health, random);
 
         public bool CheckPlayerInventory(string weaponName)
         {
@@ -57,16 +56,6 @@ namespace TheQuest
                 return player.IsWeaponOrUsablePotion(weaponName);
             }
             return false;
-        }
-
-        public void HitPlayer(int maxDamage, Random random)
-        {
-            player.Hit(maxDamage, random);
-        }
-
-        public void IncreasePlayerHealth(int health, Random random)
-        {
-            player.IncreaseHealth(health, random);
         }
 
         // Attack() is almost exactly like Move().  The Player attacks, and the enemies all get a turn to move
@@ -107,7 +96,9 @@ namespace TheQuest
                     break;
                 case 3:
                     Enemies = new List<Enemy> { new Ghost(this, GetRandomLocation(random)) };
-                    WeaponInRoom = new Bow(this, GetRandomLocation(random));
+                    //WeaponInRoom = new Bow(this, GetRandomLocation(random));
+                    WeaponInRoom = new BluePotion(this, GetRandomLocation(random));
+
                     break;
                 case 4:
                     Enemies = new List<Enemy> { new Bat(this, GetRandomLocation(random)),

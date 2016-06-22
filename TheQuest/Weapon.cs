@@ -53,5 +53,25 @@ namespace TheQuest
             }
             return false;
         }
+
+        /// <summary>
+        /// returns a Direction which is clockwise of the parameter provided
+        /// </summary>
+        /// <param name="direction"></param>
+        /// <returns></returns>
+        public Direction Clockwise(Direction direction)
+        {
+            return ((int)direction == 3) ? 0 : direction + 1;
+        }
+
+        /// <summary>
+        ///  returns a Direction which is counter-clockwise of the parameter provided
+        /// </summary>
+        /// <param name="direction"></param>
+        /// <returns></returns>
+        public Direction Counterclockwise(Direction direction)
+        {
+            return (direction == 0) ? (Direction)3 : direction - 1;
+        }
     }
 }
