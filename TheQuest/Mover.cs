@@ -35,7 +35,7 @@ namespace TheQuest
 
         public bool Nearby(Point firstPoint, Point secondPoint, int distance)
         {
-            if (Math.Abs(firstPoint.X - secondPoint.X) < distance && (Math.Abs(firstPoint.Y - secondPoint.Y) < distance))
+            if (Math.Abs(firstPoint.X - secondPoint.X) <= distance && (Math.Abs(firstPoint.Y - secondPoint.Y) <= distance))
             {
                 return true;
             }

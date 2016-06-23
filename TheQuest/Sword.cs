@@ -13,8 +13,6 @@ namespace TheQuest
         {
         }
 
-        //public override string Name {  get { return "Sword"; } }
-        // written as expression bodied:
         public override string Name => "Sword";
         public override void Attack(Direction direction, Random random)
         {

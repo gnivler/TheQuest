@@ -83,14 +83,14 @@ namespace TheQuest
             // that's not the job of the Player class
             if (!game.WeaponInRoom.PickedUp)
             {
-                if (Nearby(game.WeaponInRoom.Location, 30))
+                if (Nearby(game.WeaponInRoom.Location, 1))
                 {
                     game.WeaponInRoom.PickUpWeapon();
                     inventory.Add(game.WeaponInRoom);
                 }
             }
         }
-
+        move(
         // the weapons all have an Attack() method that takes a Direction enum and a Random object.  The player's Attack() will figure out
         // which weapon is equipped and call its Attack()
         // if the weapon is a potion, then Attack() removes it from the inventory after the player drinks it

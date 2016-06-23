@@ -34,22 +34,32 @@ namespace TheQuest
         // the DamageEnemy() method is called by Attack().  It attempts to find an enemy in a certain direction and radius.
         // if it does, it calls the enemy's Hit() method and returns true
         // If no enemy is found, it returns false
-        protected bool DamageEnemy(Direction direction, int radius, int damage, Random random)
+        protected bool DamageEnemy(Direction direction, int range, int damage, Random random)
         {
-            Point target = game.PlayerLocation;
-            for (int distance = 0; distance < radius; distance++)
+            // confused
+            // targetPoint uses it to check gradually further from the player
+            // Nearby() uses it as a proximity literal
+            // these seem unrelated to me so why are they changing in concert?
+            // does it create a CONE?!  this seems most likely... need to visualize it.  the further from the player, the greater the tolerance for Nearby()...
+            // doesn't distance = 0 imply that the points would have to be identical?
+            // 
+            // since the MoveInterval is 10 and so is the Sword range, starting the for loop at 0 and stopping at 9 means there is no arc, it attacks
+            // only straight in each of the 3 attempted directions (like a T instead of an arc as ostensibly intended)
+            // this also corrects the problem where attacking an enemy in immediate proximity is ineffective
+            // lastly the Nearby() method was using < which resulted in false if something was directly aligned (eg 100 - 100 < 0 = false) so it's now <=
+            Point targetPoint = game.PlayerLocation;
+            for (int distance = 1; distance <= range; distance++)
             {
                 foreach (Enemy enemy in game.Enemies)
                 {
-                    if (Nearby(enemy.Location, target, distance))
+                    // is the enemy Point within distance of targetPoint?
+                    if (Nearby(enemy.Location, targetPoint, distance))  
                     {
                         enemy.Hit(damage, random);
                         return true;
                     }
                 }
-                // moves game.PlayerLocation while iterating over the radius?!
-                // important to understand yet I do not yet understand
-                target = Move(direction, target, game.Boundaries);
+                targetPoint = Move(direction, targetPoint, game.Boundaries);
             }
             return false;
         }

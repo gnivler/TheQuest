@@ -143,6 +143,18 @@ namespace TheQuest
             weaponControl.Location = game.WeaponInRoom.Location;
             weaponControl.Visible = (game.WeaponInRoom.PickedUp) ? false : true;
 
+            if (game.PlayerWeapons.Count() == 1)
+            {
+                game.Equip("Sword");
+                inventorySword.BorderStyle = BorderStyle.FixedSingle;
+                inventoryBow.BorderStyle = BorderStyle.None;
+                inventoryMace.BorderStyle = BorderStyle.None;
+                inventoryRedPotion.BorderStyle = BorderStyle.None;
+                inventoryBluePotion.BorderStyle = BorderStyle.None;
+                groupBox2.Visible = true;
+                drink.Visible = false;
+            }
+
             if (game.PlayerHitPoints <= 0)
             {
                 MessageBox.Show("You died");
