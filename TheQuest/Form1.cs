@@ -27,6 +27,8 @@ namespace TheQuest
             UpdateCharacters();
         }
 
+
+
         public void UpdateCharacters()
         {
             avatar.Location = game.PlayerLocation;

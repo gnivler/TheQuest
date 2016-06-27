@@ -18,7 +18,6 @@ namespace TheQuest
         {
             // your code goes here
             //
-            // reference the original direction to use in calls
             // try the provided direction first then try clockwise then try counter-clockwise
             // it will only hit the first enemy found then stop
             // testing for false (miss) to continue through
