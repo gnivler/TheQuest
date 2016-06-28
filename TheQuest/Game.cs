@@ -21,6 +21,7 @@ namespace TheQuest
         public IEnumerable<string> PlayerWeapons => player.Weapons;
         private int level = 0;
         public int Level => level;
+        public bool GameEnded { get; private set; }
 
         // the rectangle object has a Top, Bottom, Left and Right field and works perfectly for the game area
         private Rectangle boundaries;
@@ -125,14 +126,17 @@ namespace TheQuest
                         WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
                     }
                     break;
-                case 8:
                 default:
-                    // the game ends
-                    // UI freaks out from this?
-                    System.Windows.Forms.MessageBox.Show("You've cleared the dungeon.  The game will now crash, please close the window, lol.");               
-                    System.Windows.Forms.Application.Exit();
+                    EndGame();
                     break;
             }
+        }
+
+        private void EndGame()
+        {
+            System.Windows.Forms.MessageBox.Show("You've cleared the dungeon.");
+            GameEnded = true;
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

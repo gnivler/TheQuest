@@ -167,7 +167,9 @@ namespace TheQuest
             {
                 MessageBox.Show("You have defeated the enemies on this level");
                 game.NewLevel(random);
+                if (!game.GameEnded) {
                 UpdateCharacters();
+                }
             }
         }
 
