@@ -129,7 +129,7 @@ namespace TheQuest
                 default:
                     // the game ends
                     // UI freaks out from this?
-                    System.Windows.Forms.MessageBox.Show("You've cleared the dungeon");               
+                    System.Windows.Forms.MessageBox.Show("You've cleared the dungeon.  The game will now crash, please close the window, lol.");               
                     System.Windows.Forms.Application.Exit();
                     break;
             }
