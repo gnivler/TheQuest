@@ -16,7 +16,7 @@ namespace TheQuest
         public override void Move(Random random)
         {
             // your code will go here
-            if (HitPoints < 0)
+            if (HitPoints > 0)
             {
                 Direction direction;
                 if (random.Next(1) == 0)
